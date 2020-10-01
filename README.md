@@ -1,1 +1,1 @@
-# Big-Integers implementation for C++
+# Big Integers implementation for C++
