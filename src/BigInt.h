@@ -11,7 +11,7 @@ class BigInt{
         BigInt add(BigInt x);
         string getVal();
         void operator = (string x);
-
+        BigInt operator + (BigInt const &obj);
 };
 
 #endif

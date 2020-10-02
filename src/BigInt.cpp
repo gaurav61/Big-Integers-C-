@@ -1,6 +1,7 @@
 
 #include "BigInt.h"
 #include <algorithm>
+#include <iostream>
 
 BigInt::BigInt(string x){
 	this->var = x;
@@ -44,4 +45,8 @@ string BigInt::getVal(){
 
 void BigInt::operator = (string x){
 	this->var = x;
+}
+
+BigInt BigInt::operator + (BigInt const &obj){
+	return this->add(obj);
 }
