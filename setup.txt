@@ -1,0 +1,5 @@
+g++ -fPIC -c BigInt.cpp
+g++ -shared -o ../lib/libBigInt.so *.o
+export LD_LIBRARY_PATH=/home/gaurav/Desktop/Resume/Big_Integers_C++/Big-Integers-C-/lib/:$LD_LIBRARY_PATH
+g++ test.cpp -L../lib -lBigInt -o test
+./test
