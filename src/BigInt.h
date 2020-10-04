@@ -8,10 +8,15 @@ class BigInt{
 
     public:
         BigInt(string x);
-        BigInt add(BigInt x);
+        BigInt add(BigInt obj);
+        BigInt sub(BigInt obj);
         string getVal();
         void operator = (string x);
         BigInt operator + (BigInt const &obj);
+        BigInt operator - (BigInt const &obj);
+        static bool isSmaller(string x , string y);
+        static string subHelper(string x , string y);
+        static bool allZeroes(string x);
 };
 
 #endif
