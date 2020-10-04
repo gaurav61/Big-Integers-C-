@@ -14,5 +14,7 @@ int main(){
 	cout<<obj.sub(obj2).getVal()<<endl;
 	BigInt obj4 = obj - obj2;
 	cout<<obj4.getVal()<<endl;
+	BigInt obj5 = obj * obj2;
+	cout<<obj5.getVal()<<endl;
 	return 0;
 }
