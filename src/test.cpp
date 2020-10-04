@@ -16,5 +16,6 @@ int main(){
 	cout<<obj4.getVal()<<endl;
 	BigInt obj5 = obj * obj2;
 	cout<<obj5.getVal()<<endl;
+	cout<<obj5<<endl;
 	return 0;
 }

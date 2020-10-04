@@ -352,3 +352,8 @@ bool BigInt::allZeroes(string x){
 	}
 	return true;
 }
+
+ostream& operator<<(ostream& os, const BigInt& obj){
+	os<<obj.var;
+	return os;
+}

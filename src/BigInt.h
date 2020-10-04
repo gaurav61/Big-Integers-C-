@@ -20,6 +20,7 @@ class BigInt{
         static string subHelper(string x , string y);
         static string mulHelper(string x , string y);
         static bool allZeroes(string x);
+        friend ostream& operator<<(ostream& os, BigInt const &obj);
 };
 
 #endif
