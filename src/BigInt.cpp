@@ -12,6 +12,12 @@ BigInt BigInt::add(BigInt obj){
 	string ans;
 	string x = this->var;
 	string y = obj.var;
+	if(x.find("inf")!=string::npos){
+		return *this;
+	}
+	if(y.find("inf")!=string::npos){
+		return obj;
+	}
 	int l1 = x.length();
 	int l2 = y.length();
 	bool x_sign = false;
@@ -161,6 +167,12 @@ BigInt BigInt::mul(BigInt obj){
 	string ans;
 	string x = this->var;
 	string y = obj.var;
+	if(x.find("inf")!=string::npos){
+		return *this;
+	}
+	if(y.find("inf")!=string::npos){
+		return obj;
+	}
 	bool x_sign = false;
 	bool y_sign = false;
 	if(x[0]=='-'){
@@ -208,6 +220,44 @@ BigInt BigInt::mul(BigInt obj){
 }
 
 
+BigInt BigInt::div(long long int y){
+	string ans;
+	string x = this->var;
+	if(x.find("inf")!=string::npos){
+		return *this;
+	}
+	bool x_sign = false;
+	bool y_sign = false;
+	if(x[0]=='-'){
+		x_sign=true;
+		string temp;
+		int l = x.length();
+		for(int i=1 ; i<l ; i++){
+			temp.push_back(x[i]);
+		}
+		x=temp;
+	}
+	if(y<0){
+		y_sign = true;
+		y = y * -1;
+	}
+	if(x[0]=='+'){
+		x_sign=false;
+		string temp;
+		int l = x.length();
+		for(int i=1 ; i<l ; i++){
+			temp.push_back(x[i]);
+		}
+		x=temp;
+	}
+	if(x_sign^y_sign){
+		ans.push_back('-');
+	}
+	ans.append(this->divHelper(x,y));
+	return *(new BigInt(ans)); 
+}
+
+
 
 string BigInt::getVal(){
 	return this->var;
@@ -227,6 +277,10 @@ BigInt BigInt::operator - (BigInt const &obj){
 
 BigInt BigInt::operator * (BigInt const &obj){
 	return this->mul(obj);
+}
+
+BigInt BigInt::operator / (long long int y){
+	return this->div(y);
 }
 
 bool BigInt::isSmaller(string x, string y){
@@ -341,6 +395,31 @@ string BigInt::mulHelper(string x , string y){
         s += std::to_string(result[i--]); 
   
     return s; 
+}
+
+string BigInt::divHelper(string x , long long int y){
+	
+	string ans; 
+    if(y==0){
+		return "inf";
+	}
+    int idx = 0; 
+    long long int temp = x[idx] - '0'; 
+    while (temp < y) 
+        temp = temp * 10 + (x[++idx] - '0'); 
+  
+    while (x.size() > idx) { 
+        
+        ans += (temp / y) + '0'; 
+  
+        
+        temp = (temp % y) * 10 + x[++idx] - '0'; 
+    } 
+       
+    if (ans.length() == 0) 
+        return "0"; 
+
+    return ans; 
 }
 
 bool BigInt::allZeroes(string x){
