@@ -8,6 +8,8 @@ int main(){
 	long long int c;
 	cin>>a>>b;
 	cin>>c;
+	int d;
+	cin>>d;
 	BigInt obj(a);
 	BigInt obj2(b);
 	cout<<obj.add(obj2).getVal()<<endl;
@@ -25,5 +27,6 @@ int main(){
 	cout<<obj6<<endl;
 	BigInt obj7 = -obj6;
 	cout<<obj7<<endl;
+	cout<<BigInt::fact(d)<<endl;
 	return 0;
 }

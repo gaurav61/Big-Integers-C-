@@ -214,7 +214,7 @@ BigInt BigInt::mul(BigInt obj){
 	if(x_sign^y_sign){
 		ans.push_back('-');
 	}
-	ans.append(this->mulHelper(x,y));
+	ans.append(BigInt::mulHelper(x,y));
 	return *(new BigInt(ans)); 
 
 }
@@ -253,8 +253,19 @@ BigInt BigInt::div(long long int y){
 	if(x_sign^y_sign){
 		ans.push_back('-');
 	}
-	ans.append(this->divHelper(x,y));
+	ans.append(BigInt::divHelper(x,y));
 	return *(new BigInt(ans)); 
+}
+
+BigInt BigInt::fact(int y){
+	if(y==0||y==1){
+		return *(new BigInt("1")); 
+	}
+	string ans = "1";
+	for(int i=2 ; i<=y ; i++){
+		ans = BigInt::mulHelper(ans,to_string(i));
+	}
+	return *(new BigInt(ans));
 }
 
 BigInt BigInt::abs(){
