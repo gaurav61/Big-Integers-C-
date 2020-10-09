@@ -21,5 +21,9 @@ int main(){
 	cout<<obj5<<endl;
 	cout<<obj.div(c).getVal()<<endl;
 	cout<<obj/c<<endl;
+	BigInt obj6 = obj2.abs();
+	cout<<obj6<<endl;
+	BigInt obj7 = -obj6;
+	cout<<obj7<<endl;
 	return 0;
 }

@@ -257,7 +257,13 @@ BigInt BigInt::div(long long int y){
 	return *(new BigInt(ans)); 
 }
 
-
+BigInt BigInt::abs(){
+	string x = this->var;
+	if(x[0]=='-'){
+		x[0]='+';
+	}
+	return *(new BigInt(x)); 
+}
 
 string BigInt::getVal(){
 	return this->var;
@@ -273,6 +279,24 @@ BigInt BigInt::operator + (BigInt const &obj){
 
 BigInt BigInt::operator - (BigInt const &obj){
 	return this->sub(obj);
+}
+
+BigInt BigInt::operator - (){
+	string ans;
+	string x = this->var;
+	if(x[0]=='-'){
+		ans=x;
+		ans[0]='+';
+		return *(new BigInt(ans));
+	}
+	if(x[0]=='+'){
+		ans=x;
+		ans[0]='-';
+		return *(new BigInt(ans));
+	}
+	ans.push_back('-');
+	ans.append(x);
+	return *(new BigInt(ans));
 }
 
 BigInt BigInt::operator * (BigInt const &obj){

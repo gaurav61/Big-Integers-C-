@@ -12,10 +12,12 @@ class BigInt{
         BigInt sub(BigInt obj);
         BigInt mul(BigInt obj);
         BigInt div(long long int y);
+        BigInt abs();
         string getVal();
         void operator = (string x);
         BigInt operator + (BigInt const &obj);
         BigInt operator - (BigInt const &obj);
+        BigInt operator - ();
         BigInt operator * (BigInt const &obj);
         BigInt operator / (long long int y);
         static bool isSmaller(string x , string y);
