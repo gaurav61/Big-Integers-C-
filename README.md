@@ -21,3 +21,11 @@
     $ g++ -shared -o ../lib/libBigInt.so BigInt.o
     ```
 * The ``-shared`` key tells the compiler to produce a shared object which can then be linked with other objects to form an executable. ``libBigInt.so`` is the shared library and we are storing it under the ``lib`` directory of the repository.
+
+## Usage
+* Copy the ``BigInt.h`` file present in the src directory and paste it in the directory where your cpp program is present.
+
+* Simply include the ``BigInt.h`` in your cpp program by :-
+    ```
+    #include "BigInt.h"
+    ```
