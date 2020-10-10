@@ -14,4 +14,4 @@ $ git clone https://github.com/gaurav61/Big-Integers-C-.git
 ```
 $ g++ -fPIC -c BigInt.cpp
 ```
-we created the object files with the ``-fPIC`` flag. This flag stands for Position Independent Code, a characteristic required by shared libraries.
+* we created the object files with the ``-fPIC`` flag. This flag stands for Position Independent Code, a characteristic required by shared libraries.
