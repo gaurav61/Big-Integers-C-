@@ -32,11 +32,13 @@
 
 * Set the environment variable ``LD_LIBRARY_PATH`` to the directory where ``libBigInt.so`` is present.
     ```
-    export LD_LIBRARY_PATH=ABSOLUTE_PATH_OF_THE_DIRECTORY_WHERE libBigInt.so is Present:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=<Path to the directory where libBigInt.so is Present>:$LD_LIBRARY_PATH
     ```
 * The environment variable ``LD_LIBRARY_PATH`` is used to dynamically link the shared library at run time.
 
 * Compile your source code with the following command :-
     ```
-    g++ your_code.cpp -L<Path to the directory where libBigInt.so is present> -lBigInt -o your_code
+    g++ your_code.cpp -L<Path to the directory where ``libBigInt.so`` is present> -lBigInt -o your_code
     ```
+
+* where -L flag specifies the path to the library and -l flag specifies the name of the library to use. Please note that we didn’t provide the lib prefix, as well as the .so extension: they were resolved by the compiler.
