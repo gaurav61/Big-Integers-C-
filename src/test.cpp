@@ -35,5 +35,6 @@ int main(){
 	a = "12345";
 	BigInt obj9 = a;
 	cout<<obj9<<endl;
+	BigInt obj10;
 	return 0;
 }

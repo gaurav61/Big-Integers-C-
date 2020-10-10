@@ -7,6 +7,7 @@ class BigInt{
     string var;
 
     public:
+        BigInt();
         BigInt(string x);
         BigInt add(BigInt obj);
         BigInt sub(BigInt obj);

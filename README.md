@@ -50,9 +50,17 @@
 
 ## Features
 ### Object Creation
-* #### Using constructors
+* #### Using constructor
   ```
   string a;
   cin>>a;
   BigInt obj1(a);
+  ```
+* #### Using assignment operator
+  ```
+  string a,b;
+  cin>>a>>b;
+  BigInt obj1 = a;
+  BigInt obj2;
+  obj2 = b;
   ```

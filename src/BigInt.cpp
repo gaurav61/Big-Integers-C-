@@ -4,6 +4,10 @@
 #include <iostream>
 #include <vector>
 
+BigInt::BigInt(){
+	this->var = "0";
+}
+
 BigInt::BigInt(string x){
 	this->var = x;
 }
