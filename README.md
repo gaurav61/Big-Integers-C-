@@ -64,15 +64,51 @@
   BigInt obj2;
   obj2 = b;
   ```
-### Arthematic operations
-* #### Additions
+### Arithmetic operations
+* #### Addition
   ```
   string a,b;
   cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
   BigInt obj1 = a;
   BigInt obj2 = b;
-  BigInt obj3 = a+b;
+  BigInt obj3 = obj1+obj2;
   BigInt obj4 = obj1.add(obj2);
   cout<<obj3; // 767361737395846282233921122600
   cout<<obj4; // 767361737395846282233921122600
+  ```
+
+* #### Subtraction
+  ```
+  string a,b;
+  cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
+  BigInt obj1 = a;
+  BigInt obj2 = b;
+  BigInt obj3 = obj1-obj2;
+  BigInt obj4 = obj1.sub(obj2);
+  cout<<obj3; // 761686812120878427280954533086
+  cout<<obj4; // 761686812120878427280954533086
+  ```
+
+  * #### Multliplication
+  ```
+  string a,b;
+  cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
+  BigInt obj1 = a;
+  BigInt obj2 = b;
+  BigInt obj3 = obj1*obj2;
+  BigInt obj4 = obj1.mul(obj2);
+  cout<<obj3; // 2169309065076349687925604412176078250206429223217990519151
+  cout<<obj4; // 2169309065076349687925604412176078250206429223217990519151
+  ```
+
+   * #### Division
+  ```
+  string a;
+  long long int b;
+  cin>>a>>b; // a=765431976424211928288190282624167828 , b=7641928642328
+  BigInt obj1 = a;
+  BigInt obj2 = obj1/b;
+  BigInt obj3 = obj1.div(b);
+  cout<<obj3; // 100162146527324082834222
+  cout<<obj4; // 100162146527324082834222
   ```
