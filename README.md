@@ -89,7 +89,7 @@
   cout<<obj4; // 761686812120878427280954533086
   ```
 
-  * #### Multliplication
+* #### Multliplication
   ```
   string a,b;
   cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
@@ -101,7 +101,7 @@
   cout<<obj4; // 2169309065076349687925604412176078250206429223217990519151
   ```
 
-   * #### Division
+* #### Division
   ```
   string a;
   long long int b;
@@ -109,6 +109,8 @@
   BigInt obj1 = a;
   BigInt obj2 = obj1/b;
   BigInt obj3 = obj1.div(b);
+  cout<<obj2; // 100162146527324082834222
   cout<<obj3; // 100162146527324082834222
-  cout<<obj4; // 100162146527324082834222
   ```
+
+### Other operations
