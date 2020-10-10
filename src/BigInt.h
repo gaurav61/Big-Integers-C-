@@ -24,6 +24,7 @@ class BigInt{
         BigInt operator % (long long int y);
         static bool isSmaller(string x , string y);
         static BigInt fact(int y);
+        static BigInt pow(string x, int y);
         static string subHelper(string x , string y);
         static string mulHelper(string x , string y);
         static string divHelper(string x , long long int y);

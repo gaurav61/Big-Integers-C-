@@ -275,6 +275,43 @@ BigInt BigInt::fact(int y){
 	return *(new BigInt(ans));
 }
 
+BigInt BigInt::pow(string x, int y){
+	if(y==0){
+		return *(new BigInt("1")); 
+	}
+	if(y==1){
+		return *(new BigInt(x));
+	}
+	bool x_sign = false;
+	if(x[0]=='-'){
+		string temp;
+		x_sign = true;
+		int l = x.length();
+		for(int i=1 ; i<l ; i++){
+			temp.push_back(x[i]);
+		}
+		x = temp;
+	}
+	if(x[0]=='+'){
+		string temp;
+		int l = x.length();
+		for(int i=1 ; i<l ; i++){
+			temp.push_back(x[i]);
+		}
+		x = temp;
+	}
+	string temp2 = x;
+	for(int i=2 ; i<=y ; i++){
+		temp2 = BigInt::mulHelper(x,temp2);
+	}
+	string ans;
+	if(x_sign && (y%2)){
+		ans.push_back('-');
+	}
+	ans.append(temp2);
+	return *(new BigInt(ans));
+}
+
 BigInt BigInt::abs(){
 	string x = this->var;
 	if(x[0]=='-'){

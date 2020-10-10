@@ -31,5 +31,6 @@ int main(){
 	cout<<BigInt::fact(d)<<endl;
 	cout<<obj.mod(c)<<endl;
 	cout<<obj % c<<endl;
+	cout<<BigInt::pow(a,d)<<endl;
 	return 0;
 }
