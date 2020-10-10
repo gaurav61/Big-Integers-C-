@@ -38,7 +38,12 @@
 
 * Compile your source code with the following command :-
     ```
-    g++ your_code.cpp -L<Path to the directory where ``libBigInt.so`` is present> -lBigInt -o your_code
+    g++ your_code.cpp -L<Path to the directory where libBigInt.so is present> -lBigInt -o your_code
     ```
 
 * where -L flag specifies the path to the library and -l flag specifies the name of the library to use. Please note that we didn’t provide the lib prefix, as well as the .so extension: they were resolved by the compiler.
+
+* Run your code using :-
+    ```
+    ./your_code
+    ```
