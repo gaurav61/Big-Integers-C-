@@ -66,6 +66,7 @@
   ```
 ### Arthematic operations
 * #### Additions
+  ```
   string a,b;
   cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
   BigInt obj1 = a;
