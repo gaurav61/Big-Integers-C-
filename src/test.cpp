@@ -32,5 +32,8 @@ int main(){
 	cout<<obj.mod(c)<<endl;
 	cout<<obj % c<<endl;
 	cout<<BigInt::pow(a,d)<<endl;
+	a = "12345";
+	BigInt obj9 = a;
+	cout<<obj9<<endl;
 	return 0;
 }

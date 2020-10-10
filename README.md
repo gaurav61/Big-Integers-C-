@@ -47,3 +47,12 @@
     ```
     ./your_code
     ```
+
+## Features
+### Object Creation
+* #### Using constructors
+  ```
+  string a;
+  cin>>a;
+  BigInt obj1(a);
+  ```
