@@ -1,1 +1,1 @@
-# Big Integers implementation for C++
+# Dynamic linked library for Big Integers
