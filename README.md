@@ -29,3 +29,9 @@
     ```
     #include "BigInt.h"
     ```
+
+* Set the environment variable ``LD_LIBRARY_PATH`` to the directory where ``libBigInt.so`` is present.
+    ```
+    export LD_LIBRARY_PATH=ABSOLUTE_PATH_OF_THE_DIRECTORY_WHERE libBigInt.so is Present:$LD_LIBRARY_PATH
+    ```
+* The environment variable ``LD_LIBRARY_PATH`` is used to dynamically link the shared library at run time.
