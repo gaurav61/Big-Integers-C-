@@ -64,3 +64,14 @@
   BigInt obj2;
   obj2 = b;
   ```
+### Arthematic operations
+* #### Additions
+  string a,b;
+  cin>>a>>b; // a=764524274758362354757437827843 , b=2837462637483927476483294757
+  BigInt obj1 = a;
+  BigInt obj2 = b;
+  BigInt obj3 = a+b;
+  BigInt obj4 = obj1.add(obj2);
+  cout<<obj3; // 767361737395846282233921122600
+  cout<<obj4; // 767361737395846282233921122600
+  ```
