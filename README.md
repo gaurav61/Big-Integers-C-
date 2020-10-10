@@ -163,3 +163,12 @@
   cout<<obj2; // 318608048
   cout<<obj3; // 318608048
   ```
+
+* #### Power
+  ```
+  string a;
+  int b;
+  cin>>a>>b; // a = 78, b = 5
+  BigInt obj1 = BigInt::pow(a,b);
+  cout<<obj1; // 2887174368
+  ```
