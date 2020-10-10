@@ -11,13 +11,13 @@
 * Move inside the src folder.
 
 * To start we need to create the object file first :-
-```
-$ g++ -fPIC -c BigInt.cpp
-```
+    ```
+    $ g++ -fPIC -c BigInt.cpp
+    ```
 * we created the object file with the ``-fPIC`` flag. This flag stands for Position Independent Code, a characteristic required by shared libraries.
 
 * Next create the dynamic linked library from the object file generated in the previous step :- 
-```
-$ g++ -shared -o ../lib/libBigInt.so *.o
-```
+    ```
+    $ g++ -shared -o ../lib/libBigInt.so BigInt.o
+    ```
 * The ``-shared`` key tells the compiler to produce a shared object which can then be linked with other objects to form an executable. ``libBigInt.so`` is the shared library and we are storing it under the ``lib`` directory of the repository.
