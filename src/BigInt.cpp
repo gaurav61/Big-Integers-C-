@@ -95,7 +95,6 @@ BigInt BigInt::add(BigInt obj){
 				if(BigInt::allZeroes(temp)){
 					return *(new BigInt("0"));
 				}
-				reverse(temp.begin(),temp.end());
 				return *(new BigInt(temp));
 				// do y-x
 			}
@@ -104,7 +103,6 @@ BigInt BigInt::add(BigInt obj){
 				if(BigInt::allZeroes(temp)){
 					return *(new BigInt("0"));
 				}
-				reverse(temp.begin(),temp.end());
 				string temp2 = "-";
 				int temp_l = temp.length();
 				for(int i = 0; i<temp_l; i++){
@@ -120,7 +118,6 @@ BigInt BigInt::add(BigInt obj){
 				if(BigInt::allZeroes(temp)){
 					return *(new BigInt("0"));
 				}
-				reverse(temp.begin(),temp.end());
 				string temp2 = "-";
 				int temp_l = temp.length();
 				for(int i = 0; i<temp_l; i++){
@@ -134,7 +131,6 @@ BigInt BigInt::add(BigInt obj){
 				if(BigInt::allZeroes(temp)){
 					return *(new BigInt("0"));
 				}
-				reverse(temp.begin(),temp.end());
 				return *(new BigInt(temp));
 				// (x-y)
 			}
@@ -265,6 +261,9 @@ BigInt BigInt::mod(long long int y){
 	string quotient = BigInt::divHelper(this->var, y);
 	string product = BigInt::mulHelper(quotient,to_string(y));
 	string ans = BigInt::subHelper(this->var, product);
+	if(BigInt::allZeroes(ans)){
+		return *(new BigInt("0"));
+	}
 	return *(new BigInt(ans));
 }
 
@@ -388,38 +387,50 @@ bool BigInt::isSmaller(string x, string y){
 }
 
 string BigInt::subHelper(string x , string y){
+	if(BigInt::isSmaller(x,y)){
+		swap(x,y);
+	}
 	int l1 = x.length();
 	int l2 = y.length();
+	reverse(x.begin(), x.end()); 
+	reverse(y.begin(), y.end()); 
 	int carry = 0;
 	string ans;
-	while(l1>0 && l2>0){
-		int sub = (x[l1-1]-'0')-(y[l2-1]-'0')-carry;
-		if(sub<0){
-			sub = sub + 10;
-			carry = 1;
-		}
-		else{
-			carry = 0;
-		}
-		ans.push_back(sub + '0');
-		l1--;
-		l2--; 
-	}
-	while(l1>0){
-		int sub = ((x[l1-1]-'0') - carry); 
+	
+	for (int i=0; i<l2; i++) 
+	{ 
+		int sub = ((x[i]-'0')-(y[i]-'0')-carry); 	
+		if (sub < 0) 
+		{ 
+			sub = sub + 10; 
+			carry = 1; 
+		} 
+		else
+			carry = 0; 
 
-        if (sub < 0) 
-        { 
-            sub = sub + 10; 
-            carry = 1; 
-        } 
-        else{
-            carry = 0; 
-		}      
-        ans.push_back(sub + '0'); 
-		l1--;
-	}
-	return ans;
+		ans.push_back(sub + '0'); 
+	} 
+
+	for (int i=l2; i<l1; i++) 
+	{ 
+		int sub = ((x[i]-'0') - carry); 
+		
+		
+		if (sub < 0) 
+		{ 
+			sub = sub + 10; 
+			carry = 1; 
+		} 
+		else
+			carry = 0; 
+			
+		ans.push_back(sub + '0'); 
+	} 
+
+	
+	reverse(ans.begin(), ans.end()); 
+
+	return ans; 
 }
 
 
