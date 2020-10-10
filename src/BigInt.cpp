@@ -257,6 +257,13 @@ BigInt BigInt::div(long long int y){
 	return *(new BigInt(ans)); 
 }
 
+BigInt BigInt::mod(long long int y){
+	string quotient = BigInt::divHelper(this->var, y);
+	string product = BigInt::mulHelper(quotient,to_string(y));
+	string ans = BigInt::subHelper(this->var, product);
+	return *(new BigInt(ans));
+}
+
 BigInt BigInt::fact(int y){
 	if(y==0||y==1){
 		return *(new BigInt("1")); 
@@ -316,6 +323,10 @@ BigInt BigInt::operator * (BigInt const &obj){
 
 BigInt BigInt::operator / (long long int y){
 	return this->div(y);
+}
+
+BigInt BigInt::operator % (long long int y){
+	return this->mod(y);
 }
 
 bool BigInt::isSmaller(string x, string y){

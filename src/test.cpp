@@ -26,7 +26,10 @@ int main(){
 	BigInt obj6 = obj2.abs();
 	cout<<obj6<<endl;
 	BigInt obj7 = -obj6;
+	BigInt obj8 = obj6;
 	cout<<obj7<<endl;
 	cout<<BigInt::fact(d)<<endl;
+	cout<<obj.mod(c)<<endl;
+	cout<<obj % c<<endl;
 	return 0;
 }
