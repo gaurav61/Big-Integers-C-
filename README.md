@@ -5,9 +5,9 @@
 
 ## Build from the Source Code
 * Clone the repository using :-
-```
-$ git clone https://github.com/gaurav61/Big-Integers-C-.git
-```
+    ```
+    $ git clone https://github.com/gaurav61/Big-Integers-C-.git
+    ```
 * Move inside the src folder.
 
 * To start we need to create the object file first :-
