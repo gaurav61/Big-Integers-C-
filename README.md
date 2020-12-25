@@ -23,7 +23,12 @@
 
 * Next Makefile will create the dynamic linked library(.so if you are on linux and .dll if you are on windows) from the object file generated in the previous step :- 
     ```
-    $ g++ -shared -o libBigInt.so/BigInt.dll BigInt.o
+    $ g++ -shared -o libBigInt.so BigInt.o
+    ```
+    or 
+
+    ```
+    $ g++ -shared -o BigInt.dll BigInt.o
     ```
 * The ``-shared`` key tells the compiler to produce a shared object which can then be linked with other objects to form an executable.
 
