@@ -8,19 +8,24 @@
     ```
     $ git clone https://github.com/gaurav61/Big-Integers-C-.git
     ```
-* Move inside the src folder.
+* Move inside the lib folder.
 
-* To start we need to create the object file first :-
+* Run the Makefile, based on your platform it will generate libBigInt.so(if you are on Linux) or BigInt.dll(if you are on Windows).
+    ```
+    $ make
+    ```
+
+* When we run the Makefile, it first creates the object file using :-
     ```
     $ g++ -fPIC -c BigInt.cpp
     ```
-* we created the object file with the ``-fPIC`` flag. This flag stands for Position Independent Code, a characteristic required by shared libraries.
+* The object file is created with the ``-fPIC`` flag. This flag stands for Position Independent Code, a characteristic required by shared libraries.
 
-* Next create the dynamic linked library from the object file generated in the previous step :- 
+* Next Makefile will create the dynamic linked library(.so if you are on linux and .dll if you are on windows) from the object file generated in the previous step :- 
     ```
-    $ g++ -shared -o ../lib/libBigInt.so BigInt.o
+    $ g++ -shared -o libBigInt.so/BigInt.dll BigInt.o
     ```
-* The ``-shared`` key tells the compiler to produce a shared object which can then be linked with other objects to form an executable. ``libBigInt.so`` is the shared library and we are storing it under the ``lib`` directory of the repository.
+* The ``-shared`` key tells the compiler to produce a shared object which can then be linked with other objects to form an executable.
 
 ## Usage
 * Copy the ``BigInt.h`` file present in the src directory and paste it in the directory where your cpp program is present.
