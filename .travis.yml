@@ -1,4 +1,4 @@
 language: cpp
-
+dist: bionic
 script:
 - cd lib && make clean && make
