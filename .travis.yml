@@ -1,4 +1,4 @@
 language: bash
 
 script:
-- cd lib && make
+- cd lib && make clean && make
