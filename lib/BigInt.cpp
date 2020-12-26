@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 BigInt::BigInt(){
 	this->var = "0";
 }
