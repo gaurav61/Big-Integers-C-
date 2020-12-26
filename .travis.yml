@@ -1,4 +1,4 @@
 language: bash
 
 script:
-- echo "hello world"
+- cd lib && make
