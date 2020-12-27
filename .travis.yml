@@ -1,8 +1,10 @@
 language: cpp
 dist: bionic
+env:
+- LD_LIBRARY_PATH=$TRAVIS_BUILD_DIR/lib/
 script:
 - cd lib && make clean && make
-- cd .. && export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH && cd test
+- cd .. && cd test
 - rm test-main.o && rm unittest && g++ test-main.cpp -c
 - g++ test-main.o test-init.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
 - g++ test-main.o test-add.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
