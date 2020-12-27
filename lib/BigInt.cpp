@@ -264,7 +264,17 @@ BigInt BigInt::mod(long long int y){
 	if(BigInt::allZeroes(ans)){
 		return *(new BigInt("0"));
 	}
-	return *(new BigInt(ans));
+	string ans2;
+	int flag=0;
+	for(int i=0;i<ans.size();i++){
+		if(ans[i]!='0'){
+			flag=1;
+		}
+		if(flag){
+			ans2.push_back(ans[i]);
+		}
+	}
+	return *(new BigInt(ans2));
 }
 
 BigInt BigInt::fact(int y){
