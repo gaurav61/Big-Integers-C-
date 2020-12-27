@@ -7,7 +7,7 @@ TEST_CASE( "Multiplication check", "Multiplication check" ) {
     BigInt obj(num);
     num = "222222";
     BigInt obj2(num);
-    REQUIRE( obj.mul(obj2).getVal() == "2469108642" );
+    REQUIRE( obj.mul(obj2).getVal() == "24691086423" );
     num = "99999";
     BigInt obj3 = num;
     num = "999999";
