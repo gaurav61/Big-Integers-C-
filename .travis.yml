@@ -2,3 +2,11 @@ language: cpp
 dist: bionic
 script:
 - cd lib && make clean && make
+- cd .. && export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH && cd test
+- rm test-main.o && rm unittest && g++ test-main.cpp -c
+- g++ test-main.o test-init.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
+- g++ test-main.o test-add.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
+- g++ test-main.o test-sub.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
+- g++ test-main.o test-mul.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
+- g++ test-main.o test-div.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
+- g++ test-main.o test-others.cpp -o unittest -L ../lib/ -lBigInt && ./unittest
